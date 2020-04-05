@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-  <el-menu :default-active="activeIndex" class="el-menu-demo" background-color = "#264026" text-color="#fff" active-text-color="#ffd04b" mode="horizontal" @select="handleSelect">
+  <el-menu :default-active="activeIndex" class="el-menu-demo" background-color = "#264026" text-color="#fff" active-text-color="#ffd04b" mode="horizontal">
   
   <el-menu-item index="1">Home</el-menu-item>
   <el-menu-item index="2">About</el-menu-item>
@@ -10,16 +10,18 @@
   <div slot="header" class="clearfix">
     <span>Dining Staffing Prediction Form</span>
   </div>
-  <el-form ref="form" :model="form" label-width="120px" size="mini">
-    <el-form-item label="Meal type">
-    <el-select v-model="form.meal" placeholder="please select" style = "margin-left: -60%">
+  <el-form ref="form" :model = "form" label-width="120px" size="mini">
+    <el-form-item label="Meal type" prop = "meal" :rules = "[
+            { required: true, message: 'Please check your inputs!', trigger: 'blur' },
+          ]" >
+    <el-select v-model="form.meal" placeholder="please select" style = "margin-left: -59%" required>
       <el-option label="Breakfast" value="0"></el-option>
       <el-option label="Lunch" value="1"></el-option>
       <el-option label="Dinner" value="2"></el-option>
     </el-select>
     </el-form-item>
-    <el-form-item label="Day of the week" >
-    <el-select v-model="form.day" placeholder="please select" style = "margin-left: -60%">
+    <el-form-item label="Day" prop = "day" required>
+    <el-select v-model="form.day" placeholder="please select" style = "margin-left: -59%">
       <el-option label="Sunday" value="0"></el-option>
       <el-option label="Monday" value="1"></el-option>
       <el-option label="Tuesday" value="2"></el-option>
@@ -29,44 +31,44 @@
       <el-option label="Saturday" value="6"></el-option>
     </el-select>
     </el-form-item>
-    <el-form-item label="Location">
-    <el-select v-model="form.location" placeholder="please select" style = "margin-left: -60%">
+    <el-form-item label="Location" prop = "location" required>
+    <el-select v-model="form.location" placeholder="please select" style = "margin-left: -59%">
       <el-option label="Buffet" value="0"></el-option>
       <el-option label="The Mix" value="1"></el-option>
       <el-option label="C store" value="2"></el-option>
       <el-option label="Edge" value="3"></el-option>
     </el-select>
     </el-form-item>
-    <el-form-item label="Week Number">
-    <el-input v-model="form.week" style = "width: 40%; margin-left: -58%"></el-input>
+    <el-form-item label="Week Number" prop = "week" required>
+    <el-input v-model="form.week" style = "width: 40%; margin-left: -58%" ></el-input>
   </el-form-item>
-  <el-form-item label="Year">
+  <el-form-item label="Year" prop = "year" required>
     <el-input v-model="form.year" style = "width: 40%; margin-left: -58%"></el-input>
   </el-form-item>
-  <el-form-item label="Temperature">
+  <el-form-item label="Temperature" prop = "temp" required>
     <el-input v-model="form.temp" style = "width: 40%; margin-left: -58%"></el-input>
   </el-form-item>
-  <el-form-item label="Snow Amount">
+  <el-form-item label="Snow Amount" prop = "snow" required>
     <el-input v-model="form.snow" style = "width: 40%; margin-left: -58%"></el-input>
   </el-form-item>
-  <el-form-item label="Precipitation Amount">
+  <el-form-item label="Precipitation Amount" prop = "prec" required>
     <el-input v-model="form.prec" style = "width: 40%; margin-left: -58%"></el-input>
   </el-form-item>
   
-  <el-form-item label="Semester">
+  <el-form-item label="Semester" prop = "semester" required>
     <el-radio-group v-model="form.semester" size="small" style = "margin-left: -60%">
       <el-radio border label="Fall"></el-radio>
       <el-radio border label="Spring" style = "margin-left: -10%"></el-radio>
     </el-radio-group>
   </el-form-item>
-  <el-form-item label="Event type">
+  <el-form-item label="Event type" prop = "type">
     <el-checkbox-group v-model="form.type" >
       <el-checkbox-button label="NOAA(Severe weather)" name="type" style = "margin-left: -23%"></el-checkbox-button>
       <el-checkbox-button label="Football/Holiday Weekend" name="type"></el-checkbox-button>
     </el-checkbox-group>
   </el-form-item>
   <el-form-item size="large" style = "margin-left: -25%" >
-    <el-button type="success" @click="onSubmit" style = "color: black">Predict</el-button>
+    <el-button type="success" @click="onSubmit('form')" style = "color: black">Predict</el-button>
   </el-form-item>
   </el-form>
     </el-card>
@@ -97,7 +99,36 @@ export default {
         week: '',
         location: '',
         semester: ''
-      }
+      },
+       rules: {
+          day: [
+            { required: true, message: 'Please check your inputs!', trigger: 'blur' },
+          ],
+          location: [
+            { required: true, message: 'Please select Activity zone', trigger: 'blur' }
+          ],
+          year: [
+            {required: true, message: 'Please check your inputs', trigger: 'blur' }
+          ],
+          snow: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ],
+          meal: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ],
+          prec: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ],
+          temp: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ],
+          semester: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ],
+          week: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ],
+       }
     };
   },
   
@@ -111,6 +142,16 @@ export default {
         .catch((error) => {
           // eslint-disable-next-line
           console.error(error);
+        });
+    },
+    onSubmit(formName){
+      this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
         });
     },
   },
