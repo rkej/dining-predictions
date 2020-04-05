@@ -11,9 +11,7 @@
     <span>Dining Staffing Prediction Form</span>
   </div>
   <el-form ref="form" :model = "form" label-width="120px" size="mini">
-    <el-form-item label="Meal type" prop = "meal" :rules = "[
-            { required: true, message: 'Please check your inputs!', trigger: 'blur' },
-          ]" >
+    <el-form-item label="Meal type" prop = "meal" required>
     <el-select v-model="form.meal" placeholder="please select" style = "margin-left: -59%" required>
       <el-option label="Breakfast" value="0"></el-option>
       <el-option label="Lunch" value="1"></el-option>
@@ -35,8 +33,7 @@
     <el-select v-model="form.location" placeholder="please select" style = "margin-left: -59%">
       <el-option label="Buffet" value="0"></el-option>
       <el-option label="The Mix" value="1"></el-option>
-      <el-option label="C store" value="2"></el-option>
-      <el-option label="Edge" value="3"></el-option>
+      <el-option label="Edge" value="2"></el-option>
     </el-select>
     </el-form-item>
     <el-form-item label="Week Number" prop = "week" required>
@@ -57,8 +54,8 @@
   
   <el-form-item label="Semester" prop = "semester" required>
     <el-radio-group v-model="form.semester" size="small" style = "margin-left: -60%">
-      <el-radio border label="Fall"></el-radio>
-      <el-radio border label="Spring" style = "margin-left: -10%"></el-radio>
+      <el-radio border label="Fall" value = "1"></el-radio>
+      <el-radio border label="Spring" value = "0" style = "margin-left: -10%"></el-radio>
     </el-radio-group>
   </el-form-item>
   <el-form-item label="Event type" prop = "type">
@@ -113,9 +110,7 @@ export default {
           snow: [
             {required: true, message: 'Please check your inputs!', trigger: 'blur' }
           ],
-          meal: [
-            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
-          ],
+          
           prec: [
             {required: true, message: 'Please check your inputs!', trigger: 'blur' }
           ],
@@ -128,36 +123,26 @@ export default {
           week: [
             {required: true, message: 'Please check your inputs!', trigger: 'blur' }
           ],
+          meal: [
+            {required: true, message: 'Please check your inputs!', trigger: 'blur' }
+          ]
        }
     };
   },
   
   methods: {
-    getMessage() {
-      axios.get('http://localhost:5000/api/getMessage')
-        .then((res) => {
-          this.msg = res.data;
-          console.log(this.msg);
-        })
-        .catch((error) => {
-          // eslint-disable-next-line
-          console.error(error);
-        });
-    },
     onSubmit(formName){
       this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
+            axios.post('http://localhost:5000/api/getPredictions', this.form)
+        .then(response=>{
+            alert("The predicted customers is: " + response.data);
+        })
           }
         });
     },
   },
-  created() {
-    this.getMessage();
-  },
+  
 };
 
 </script>
@@ -216,7 +201,6 @@ export default {
   }
 .box-card {
     width: 600px;
-    align-self: auto;
-    margin-left: 27%
+    margin: 0 auto
   }
 </style>
