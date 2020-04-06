@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-  <el-menu :default-active="activeIndex" class="el-menu-demo" background-color = "#264026" text-color="#fff" active-text-color="#ffd04b" mode="horizontal">
+  <el-menu :default-active="activeIndex" class="el-menu-demo" background-color = "#491d70" text-color="#fff" active-text-color="#ffd04b" mode="horizontal">
   
   <el-menu-item index="1">Home</el-menu-item>
   <el-menu-item index="2">About</el-menu-item>
@@ -65,7 +65,7 @@
     </el-checkbox-group>
   </el-form-item>
   <el-form-item size="large" style = "margin-left: -25%" >
-    <el-button type="success" @click="onSubmit('form')" style = "color: black">Predict</el-button>
+    <el-button @click="onSubmit('form')" style = "color: black; background-color:#FFD100" >Predict</el-button>
   </el-form-item>
   </el-form>
     </el-card>
@@ -165,7 +165,8 @@ export default {
     padding: 18px 20px;
     border-bottom: 1px solid #EBEEF5;
     box-sizing: border-box;
-    background-color: #949245;
+    background-color: #264026;
+    color: #ffffffff;
 }
 .text {
     font-size: 14px;
