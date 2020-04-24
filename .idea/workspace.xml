@@ -3,12 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="99cb2981-a44c-406e-a15e-b48e524f8d52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supervised_learning/.ipynb_checkpoints/Test-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/supervised_learning/.ipynb_checkpoints/Test-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supervised_learning/Test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/supervised_learning/Test.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,6 +88,10 @@
       <workItem from="1582346448820" duration="40000" />
       <workItem from="1585973885004" duration="23866000" />
       <workItem from="1586194382744" duration="962000" />
+      <workItem from="1586252210435" duration="1863000" />
+      <workItem from="1586796185728" duration="625000" />
+      <workItem from="1587040701373" duration="277000" />
+      <workItem from="1587235116568" duration="951000" />
     </task>
     <servers />
   </component>
@@ -93,6 +113,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/food_services_predictions$food_services_predictions.coverage" NAME="food_services_predictions Coverage Results" MODIFIED="1581346950529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/dining_predictions$food_services_predictions.coverage" NAME="food_services_predictions Coverage Results" MODIFIED="1586194743585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/dining_predictions$food_services_predictions.coverage" NAME="food_services_predictions Coverage Results" MODIFIED="1587040971803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
