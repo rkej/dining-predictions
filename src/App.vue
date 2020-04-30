@@ -133,7 +133,7 @@ export default {
     onSubmit(formName){
       this.$refs[formName].validate((valid) => {
           if (valid) {
-            axios.post('http://localhost:5000/api/getPredictions', this.form)
+            axios.post('/api/getPredictions', this.form)
         .then(response=>{
             alert("The predicted customers is: " + response.data);
         })

@@ -1,26 +1,21 @@
 import flask
-import pickle
-import joblib
-from flask import request, jsonify
+from flask import request, jsonify, current_app, send_file, render_template
 from flask_cors import CORS, cross_origin
 import pandas as pd
-from sklearn.model_selection import train_test_split
 import xgboost as xgb
-from sklearn.svm import SVR
-from sklearn.metrics import mean_squared_error
-import numpy as np
-import math
-from sklearn.externals import joblib
 
-app = flask.Flask(__name__)
-app.config.from_object(__name__)
+app = flask.Flask(__name__, static_folder='./dist/static', template_folder='./dist')
 CORS(app, resources={r'/*': {'origins': '*'}})
+
+
+@app.route('/')
+def home():
+    """Render website's home page."""
+    return render_template('index.html')
 
 
 @app.route('/api/getPredictions', methods=['POST'])
 def parse_form():
-
-
     post_data = request.get_json()
     print(type(post_data["week"]))
     pred = predict_xgb(post_data)
@@ -75,7 +70,9 @@ def predict_xgb(res):
     df_dict["NOAA Event"] = NOAA
     df_dict["Location"] = location
     lst = [[meal, year, day, temp, prec, snow, semester, week, Football, NOAA, location]]
-    df = pd.DataFrame(lst, columns=["Meal", "Date", "Day of Week", "Temp", "Percipitation Amt", "Snow Amount", "Semester", "Week Num", "Football", "NOAA Event", "Location"])
+    df = pd.DataFrame(lst,
+                      columns=["Meal", "Date", "Day of Week", "Temp", "Percipitation Amt", "Snow Amount", "Semester",
+                               "Week Num", "Football", "NOAA Event", "Location"])
 
     prediction = bst.predict(df)
     print(prediction)
