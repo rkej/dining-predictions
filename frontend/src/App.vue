@@ -4,7 +4,6 @@
   <el-menu :default-active="activeIndex" class="el-menu-demo" background-color = "#491d70" text-color="#fff" active-text-color="#ffd04b" mode="horizontal">
   
   <el-menu-item index="1">Home</el-menu-item>
-  <el-menu-item index="2">About</el-menu-item>
     </el-menu>
     <el-card class="box-card" style = "margin-top: 1.5%" >
   <div slot="header" class="clearfix">
@@ -134,7 +133,7 @@ export default {
     onSubmit(formName){
       this.$refs[formName].validate((valid) => {
           if (valid) {
-            axios.post('http://localhost:5000/api/getPredictions', this.form)
+            axios.post('/api/getPredictions', this.form)
         .then(response=>{
             alert("The predicted customers is: " + response.data);
         })

@@ -1,13 +1,24 @@
-# dining-predictions
+# frontend
 
-## How to get started with this project
-Pre-requisites - pip and npm. (This will get updated as we move forward). 
-### Setting up flask. 
-1. Clone this repo
-2. Download PyCharm as an IDE - you can get an Ultimate version for students. 
-3. Open this project in PyCharm. 
-4. Hit run on PyCharm - Your backend server should be ready to use on localhost:5000 ! 
+## Project setup
+```
+npm install
+```
 
-### Setting up Vue
-1. Navigate to the frontend directory, Execute `npm install` on a Terminal. 
-2. Execute, `npm run serve`. - Your client side server is ready to use on: localhost:8080 (copy & paste into browser) and you should see a "hello world!" with Vue's logo on the page. :)
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
