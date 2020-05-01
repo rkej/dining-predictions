@@ -1,5 +1,6 @@
 import flask
 from flask import request, jsonify, current_app, send_file, render_template
+import sklearn
 from flask_cors import CORS, cross_origin
 import pandas as pd
 import xgboost as xgb
