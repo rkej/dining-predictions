@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99cb2981-a44c-406e-a15e-b48e524f8d52" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supervised_learning/Test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/supervised_learning/Test.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,7 @@
       <workItem from="1586796185728" duration="625000" />
       <workItem from="1587040701373" duration="277000" />
       <workItem from="1587235116568" duration="951000" />
-      <workItem from="1588266258056" duration="5861000" />
+      <workItem from="1588266258056" duration="6460000" />
     </task>
     <servers />
   </component>
