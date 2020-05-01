@@ -29,11 +29,11 @@ Pre-requisites - pip, npm, Heroku.
 1. `1.model` is the model  file we've generated and are using to get predictions. 
 2. `1.model` is a result of an XGBoost model that was trained on the data found in `supervised_learning` directory of this project. 
 To learn more about XGBoost - visit https://xgboost.readthedocs.io/en/latest/. We've used the sklearn API for XGBoost in this project. 
-3. The model is built in Test.ipynb in the same directory.
+3. The model is built in `Test.ipynb` in the same directory.
 4. Descriptions of data files used: 
 - `processed_buffet.csv:` Data from the buffet area of Pollock Commons
 - `mix.csv`: Data from The Mix at Pollock Commons
 - `edge.csv`: Data from the Edge at Pollock Commons
 - `merged_data.csv`: processed data for the model to use. 
 
-##### For any more information or access to this repo, please raise an issue on GitHub and I will respond promptly. 
+#### For any more information or access to this repo, please raise an issue on GitHub and I will respond promptly. 
